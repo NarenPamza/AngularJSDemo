@@ -27,8 +27,19 @@ app.controller("dataController", function($scope,$rootScope){
         $scope.things.push($scope.currentValue);
     }
     
+    $scope.onSelect = function(p){
+        
+        if(p == $scope.sort){
+            $scope.sort = "-"+p;
+        }else
+            {
+                $scope.sort =p;
+            }
+        
+    }
+    
     $scope.people=[
-        {sno:112,name:"rajan",age:45,salary:10000},
+        {sno:117,name:"rajan",age:45,salary:10000},
         {sno:113,name:"ravi",age:47,salary:15000},
         {sno:114,name:"suresh",age:48,salary:"15000"},
         {sno:115,name:"kumar",age:49,salary:"15000"},
