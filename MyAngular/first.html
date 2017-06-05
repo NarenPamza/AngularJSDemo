@@ -1,0 +1,114 @@
+<html>
+<head>
+    <script src="angular.min.js"> </script>
+    <script src="angularscripts/ang.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+    
+    
+    
+    </head>
+    
+    <body ng-app="firstapp" ng-init="x='Master'">
+    
+    This is my First Angular App
+        
+        {{2+3}}
+        {{x}}
+        <input type="text" ng-value="x"> <br>
+        
+        <!-- Ng model means , changing x value will change all its reference -->
+        <input type="text" ng-change="handleChange()" ng-model="x"><br>
+        
+        
+        
+        <!--Controller div 1 -->
+        <div id="test" class="alert alert-info" ng-controller="firstController">
+            this is bootstrap <br>
+            
+             <!-- Ng model means , changing x value will change all its reference -->
+        x Value: <input type="text" ng-change="handleChange()" ng-model="x"><br>
+            
+          Parent X Value   <input type="text" ng-change="handleParent()" ng-model="$parent.x"><br>
+        
+        {{info}} <br>
+           {{parentInfo}} <br>
+        
+        </div>
+        
+         <!--Controller div 2 -->
+        <div ng-controller="firstController" class="alert alert-danger">
+        This is Another Div <br>
+            
+            {{x}} <br>
+            {{$parent.x}} <br>
+           X Value: <input type="text" ng-change="handleChange()" ng-model="x"> <br>
+            Parent X Value: <input type="text" ng-model="$parent.x"> <br>
+            
+             {{info}} <br>
+             {{parentInfo}} <br>
+        </div>
+        
+        
+        <!-- NG Repeat Div -->
+        
+        <div ng-controller="dataController" class="jumbotron">
+            <input type="text" ng-model="currentValue">
+            <button class="btn btn-danger" ng-click="addItem()"> Add Thing
+            </button> <br>
+            
+            <input type="text" ng-model="removeValue">
+            <button class="btn btn-danger" ng-click="removeItem()"> Remove Thing
+            </button>
+        <ul>
+            <li ng-repeat="v in things">
+             {{v}}
+            </li>
+            </ul>
+            
+            <table class="table table-hover">
+            <tr>
+                <th>
+                    SNO
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Age
+                </th>
+                <th>
+                    Salary
+                </th>
+                
+                </tr>
+                
+                <tr ng-repeat="temp in people">
+                <td>
+                    
+                    {{temp.sno}}
+                    </td>
+                    <td>
+                    
+                    {{temp.name}}
+                    </td>
+                    <td>
+                    
+                    {{temp.age}}
+                    </td>
+                    <td>
+                    
+                    {{temp.salary}}
+                    </td>
+                
+                </tr>
+            
+            </table>
+        
+        </div>
+             
+    </body>
+
+</html>
+
