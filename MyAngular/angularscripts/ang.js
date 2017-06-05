@@ -19,13 +19,30 @@ app.controller("firstController", function($scope,$rootScope){
 });
 
 
-app.controller("dataController", function($scope,$rootScope){
+app.controller("dataController", function($scope,$rootScope,$interval){
                
                $scope.things=['pen','Pencil', 'mat'];
+    
+    $scope.names=['Ajay','Akram', 'Roger'];
     
     $scope.addItem = function(){
         $scope.things.push($scope.currentValue);
     }
+    
+    $scope.addPeople = function(){
+        var temp = {};
+        temp.sno = Math.round(Math.random() *1200) +1;
+        temp.name = $scope.names[Math.floor(Math.random()*3)];
+        temp.age= Math.round(Math.random() *79) +1;
+        temp.salary = 5000 + Math.round(Math.random()*20000);
+        console.log(temp);
+        $scope.people.push(temp);
+        
+    }
+    
+    $interval(function(){$scope.addPeople()},3000);
+    
+    
     
     $scope.onSelect = function(p){
         
@@ -47,5 +64,22 @@ app.controller("dataController", function($scope,$rootScope){
         
         
     ];
+    
+});
+
+
+app.controller("parent", function($scope){
+    
+    $scope.x = "Parent Value";
+    
+    $scope.eventHandler = function(){
+        $scope.y = "The Value of Y is: " + $scope.x + " " + Math.random();
+    }   
+    
+});
+
+app.controller("child", function($scope){
+               
+      
     
 });
