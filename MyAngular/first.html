@@ -69,29 +69,29 @@
             
             <table class="table table-hover">
             <tr>
-                <th>
+                <th ng-click="onSelect('sno')">
                     SNO
                 </th>
-                <th>
+                <th ng-click="onSelect('name')">
                     Name
                 </th>
-                <th>
+                <th ng-click="onSelect('age')">
                     Age
                 </th>
-                <th>
+                <th ng-click="onSelect('salary')">
                     Salary
                 </th>
                 
                 </tr>
                 
-                <tr ng-repeat="temp in people">
+                <tr ng-repeat="temp in people | orderBy : sort ">
                 <td>
                     
                     {{temp.sno}}
                     </td>
                     <td>
                     
-                    {{temp.name}}
+                    {{temp.name | uppercase}}
                     </td>
                     <td>
                     
@@ -99,7 +99,7 @@
                     </td>
                     <td>
                     
-                    {{temp.salary}}
+                    {{temp.salary | currency:'र'}}
                     </td>
                 
                 </tr>
@@ -107,6 +107,8 @@
             </table>
         
         </div>
+        
+        
              
     </body>
 

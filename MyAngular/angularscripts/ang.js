@@ -71,6 +71,19 @@ app.controller("dataController", function($scope,$rootScope,$interval){
 app.controller("parent", function($scope){
     
     $scope.x = "Parent Value";
+    $scope.toggle = false;
+    $scope.btnText = "hide";
+    $scope.handle = function(){
+        if($scope.btnText == "hide"){
+            $scope.toggle = true;
+             $scope.btnText = "show";
+            
+        }else{
+            $scope.toggle = false;
+             $scope.btnText = "hide";
+        }
+        
+    }
     
     $scope.eventHandler = function(){
         $scope.y = "The Value of Y is: " + $scope.x + " " + Math.random();

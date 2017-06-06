@@ -1,0 +1,111 @@
+<html>
+<head>
+    <script src="angular.min.js"> </script>
+    <script src="angular-resource.min.js"> </script>
+    <script src="angularscripts/angDay2.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+    
+    
+    
+    </head>
+    
+    <body ng-app="todayapp">
+
+        <!-- Parent ,child Example below -->
+        <div class="jumbotron" ng-controller="formController">
+        <table>
+            
+            <tr>
+            <td>sno</td>
+            <td> <input type="text" ng-model="sno"</td>
+                {{msg1}}
+            </tr>
+            <tr>
+            <td>name</td>
+            <td> <input type="text" ng-model="name"</td>
+                {{msg2}}
+            </tr>
+            <tr>
+            <td>age</td>
+            <td> <input type="text" ng-model="age"</td>
+                {{msg3}}
+            </tr>
+            <tr>
+            <td>salary</td>
+            <td> <input type="text" ng-model="salary"</td>
+                
+            </tr>
+            
+            <tr>
+            
+            <td align="center" colspan=2> <button class="btn btn-danger" ng-click="addPerson()">
+                add Person
+                </button>
+                
+            </td>
+            </tr>
+            
+            </table>
+        
+        
+        </div>
+        
+        <div ng-controller="tableController">
+        
+        
+            <table class="table table-hover">
+            <tr>
+                <th>
+                    SNO
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Age
+                </th>
+                <th>
+                    Salary
+                </th>
+                
+                </tr>
+                
+                <!-- Can add filter here for entire row using "| filter:'1'" alone with ng-repeat example.Use Custom filters like "ng-repeat="temp in products | searchNames:'nar'" which wil filter with this pattern-->
+                <tr ng-repeat="temp in products">
+                <td>
+                    
+                    {{temp.ProductID}}
+                    </td>
+                    <td>
+                    
+                    {{temp.ProductName | uppercase}}
+                    </td>
+                    <td>
+                    
+                    {{temp.ProductType}}
+                    </td>
+                    <td>
+                    
+                    {{temp.Price  |currency:'र'}}
+                    </td>
+                
+                </tr>
+            
+            </table>
+        </div>
+        
+        <div ng-controller="factoryController" class="alert alert-success">
+            
+            <div ng-include="'template.html'"> Working</div>
+        
+        
+        </div>
+        
+        
+
+
+</body>
+
+</html>
