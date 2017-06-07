@@ -166,3 +166,13 @@ app.filter("searchNames", function(){
        return result;
    })
 });
+
+app.directive("myElement", function(){
+   var obj = {
+       restrict : 'E',
+       transclude : 'element',
+       templateUrl : 'template.html'
+       
+   } 
+    return obj;
+});

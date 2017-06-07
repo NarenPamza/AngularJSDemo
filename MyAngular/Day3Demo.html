@@ -1,0 +1,41 @@
+<html>
+<head>
+    <script src="angular.min.js"> </script>
+    <script src="angular-resource.min.js"> </script>
+    <script src="angularscripts/angDay3.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+    
+    <body ng-app="third">
+        
+        <div class="jumbtron" current="vehicles" ng-controller="rootController">
+            
+            This is the first line
+            
+            <ul>
+            <li ng-repeat="x in current">
+                {{x}}
+                </li>
+            </ul>
+            
+            {{parentName}}
+            <input type = 'text' ng-model='$parent.parentName'>
+        
+        </div>
+        
+        <div ng-controller="rootController">
+            
+            <div class='alert alert-success'> {{parentName}}, {{y}}, {{data}} <br> <input type = 'text' ng-model='parentName'>  </div>
+            
+            <!-- x is passed as object here -->
+            <scope-definer y = "Rajesh" x= "parentName"></scope-definer>
+        </div>
+
+        
+        
+
+
+</body>
+
+</html>

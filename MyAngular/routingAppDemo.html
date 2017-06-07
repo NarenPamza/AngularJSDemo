@@ -1,0 +1,32 @@
+<html>
+<head>
+    <script src="angular.min.js"> </script>
+    <script src="angular-resource.min.js"> </script>
+    <script src="angular-route.min.js"> </script>
+    <script src="angularscripts/routingApp.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+    
+    <body ng-app="routingApp">
+        
+ <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">Angular APP</a>
+            </div>
+            <ul class="nav navbar-nav">
+              <li class="active" id="homeMenu"><a href="#!home">Home</a></li>
+              
+              <li id="officeMenu"><a href="#!offices">Office</a></li>
+              
+            </ul>
+        </div>
+     
+     
+ </nav>
+        <div ng-view></div>
+</body>
+
+</html>
